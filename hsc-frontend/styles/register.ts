@@ -1,0 +1,43 @@
+export const registerStyles = {
+	container: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		overflowY: "auto",
+		overflowX: "hidden",
+		bgcolor: "primary.main",
+	},
+	header: {
+		bgcolor: "primary.main",
+		height: 0.15,
+		zIndex: 1,
+		width: 1,
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		position: "relative",
+	},
+	body: {
+		zIndex: 2,
+		borderRadius: "25px 25px 0 0",
+		height: "auto",
+		flexGrow: 1,
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		width: 1,
+		bgcolor: "white",
+		padding: "0 1.2rem",
+		pt: "60px",
+		boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 12px",
+	},
+	title: {
+		width: 1,
+		textAlign: "center",
+		fontWeight: "bold",
+		color: "white",
+	},
+	my25: {
+		my: 2.5,
+	},
+};

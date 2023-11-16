@@ -1,0 +1,48 @@
+import Logo from "../public/Logo.svg";
+
+export const homeStyles = {
+	container: {
+		overflow: "hidden",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		bgcolor: "primary.main",
+		"&::after": {
+			content: '"Hello!"',
+			position: "absolute",
+			bottom: "29%",
+			width: 150,
+			height: 150,
+			color: "white",
+			zIndex: 1,
+			textAlign: "center",
+			right: 0,
+			left: "50%",
+			transform: "translateX(-50%)",
+			background: `url(${Logo.src})`,
+			backgroundRepeat: "no-repeat",
+			backgroundSize: "cover",
+		},
+	},
+	header: {
+		height: 0.7,
+		width: 1,
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		fontWeight: "bold",
+	},
+	body: {
+		bgcolor: "white",
+		width: 1,
+		height: 0.3,
+		zIndex: 2,
+		borderRadius: "25px 25px 0 0",
+		padding: "50px 1.2rem",
+		boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 12px",
+		display: "flex",
+		justifyContent: "center",
+		flexDirection: "column",
+		position: "relative",
+	},
+};

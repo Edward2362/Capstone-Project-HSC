@@ -1,0 +1,32 @@
+name: Vercel Production Deployment
+
+env:
+    VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    Deploy-Production:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Deploy to Production
+              uses: amondnet/vercel-action@v25
+              id: deploy-vercel-production
+              with:
+                  vercel-token: ${{ secrets.VERCEL_TOKEN }}
+                  vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+                  vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+                  vercel-args: "--prod"
+                  scope: ${{ secrets.VERCEL_ORG_ID }}
+                  github-comment: true
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  alias-domains: ${{ secrets.PRODUCTION_DOMAIN }}

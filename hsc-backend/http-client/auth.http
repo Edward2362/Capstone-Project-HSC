@@ -1,0 +1,45 @@
+### Login
+
+POST {{base-url}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### Register
+
+POST {{base-url}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "{{name}}",
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+### Change password
+
+PATCH {{base-url}}/auth/password
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "oldPassword": "{{password}}",
+  "newPassword": "{{new-password}}"
+}
+
+### Refresh token
+
+POST {{base-url}}/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refresh-token}}"
+}
+
+### Get current user
+
+GET {{base-url}}/auth/me
+Authorization: Bearer {{access-token}}
